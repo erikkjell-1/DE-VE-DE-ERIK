@@ -52,17 +52,44 @@ async function getAllMovies(){
 
     movies.forEach((movie) => {
         console.log(movie)
-        const elem = `         <card><p>
+        const elem = `         <card data-movie-id="${movie.id}"><p>
                                ${movie.data().Title}<br>
                                Released: ${movie.data().Released}<br>
                                Genre: ${movie.data().Genre}<br>
-                               Rating: ${movie.data().Rating}
-                               </p></card>`
+                               Rating: ${movie.data().Rating}</p>
+                               <button id={movie.id}></button>
+                               </card>`
         elemResult.insertAdjacentHTML('beforeend', elem)
     })
+    removeFunction();
 }
 
 getAllMovies();
+
+async function removeMovie(movieId) {
+    try {
+        await deleteDoc(doc(db, "Movies", movieId));
+    } catch (error) {
+        console.log('ERROR:', error);
+    }
+}
+
+function removeFunction() {
+    const movieElems = document.querySelectorAll('card');
+
+    movieElems.forEach((movieElem) => {
+        movieElem.addEventListener('click', (event) => {
+            const movieId = event.currentTarget.getAttribute('data-movie-id');
+
+           
+            removeMovie(movieId);
+        });
+    })
+}
+
+
+
+
 
     
 

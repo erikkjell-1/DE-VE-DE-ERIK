@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: antiquewhite;
+    background-color: brown;
+}
+
+p {
+    font-size: medium;
+}
+
+#send:hover {
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: rgb(145, 20, 8);
+}
+
+#form {
+    display: none;
+}

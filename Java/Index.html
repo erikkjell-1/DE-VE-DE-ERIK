@@ -13,7 +13,39 @@
         <h1>CHRISTMAS MOVIES</h1>
     </header>
 
+    <div class="container">
+        <h1>Add a Christmas Movie</h1>
+        <p>Fill this form to get your favourite Christmas Movie in on the website.</p>
+        <hr>
+        <label for="title"><b>Title</b></label>
+        <input id="movie" type="text" placeholder="Enter Title" required>
+    
+        <label for="released"><b>Release Year</b></label>
+        <input id="release" type="number" placeholder="YYYY" min="1920" max="2022" required>
 
-    <script src="Java/INDEX.js"></script>
+        <label for="category"><b>Genre</b></label>
+        <input id="categories" list="options" placeholder="Choose a genre" required>
+        <datalist id="options">
+            <option value="Comedy"></option>
+            <option value="Romance"></option>
+            <option value="Action"></option>
+            <option value="Drama"></option>
+            <option value="Kids"></option>
+
+        </datalist>
+    
+        <label for="rating"><b>Rating</b></label>
+        <input id="score" type="number" placeholder="1-10" pattern="[1-5]{1}" max="10" min="1" required>
+    
+          <button onclick="window.location.reload">Cancel</button>
+          <button id="send">Save Movie</button>
+        
+      </div>
+
+      <main id="database">
+
+      </main>
+
+    <script type="module" src="INDEX.js"></script>
 </body>
 </html>

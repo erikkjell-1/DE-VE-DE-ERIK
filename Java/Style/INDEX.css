@@ -6,7 +6,7 @@
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 body{
@@ -30,7 +30,7 @@ nav {
 }
 
 p {
-    font-size: larger;
+    font-size: medium;
     border: 2px black;
 }
 

@@ -10,8 +10,12 @@
 <body>
     <header>
         <h1>CHRISTMAS MOVIES</h1>
-        <button onclick="document.getElementById('form').style.display='block'" style="width:auto;"class="movieForm">Add a Christmas Movie</button>
     </header>
+    <nav>
+        <button onclick="document.getElementById('form').style.display='block'" style="width:auto;" id="movieForm">Add a Christmas Movie</button>
+        
+        <input id="search" type="text" placeholder="Christmas Movie">
+    </nav>
 
     <div id="form">
         <p>Fill this form to get your favourite Christmas Movie in on the website.</p>
@@ -38,7 +42,7 @@
 
 
           <button id="send">Save Movie</button>
-          <button onclick="document.getElementById('form').style.display='none'">Close</button>
+          <button id="close" onclick="document.getElementById('form').style.display='none'">Close</button>
           <hr>
       </div>
 

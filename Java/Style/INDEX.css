@@ -5,11 +5,37 @@
     background-color: brown;
 }
 
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 p {
     font-size: medium;
 }
 
-#send:hover {
+#search, #movie, #release, #categories, #score {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: antiquewhite;
+    color: rgb(145, 20, 8);
+}
+
+#send, #close, #movieForm {
+    background-color: green;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#send:hover, #close:hover, #movieForm:hover {
     cursor: pointer;
     background-color: antiquewhite;
     color: rgb(145, 20, 8);

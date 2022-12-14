@@ -12,14 +12,13 @@
         <h1>CHRISTMAS MOVIES</h1>
     </header>
     <nav>
-        <button onclick="document.getElementById('form').style.display='block'" style="width:auto;" id="movieForm">Add a Christmas Movie</button>
+        <button onclick="document.getElementById('form').style.display='grid'" style="width:auto;" id="movieForm">Add a Christmas Movie</button>
         
         <input id="search" type="text" placeholder="Movie Search">
     </nav>
 
     <div id="form">
         <p>Fill this form to get your favourite Christmas Movie in on the website.</p>
-
         <label for="title"><b>Title</b></label>
         <input id="movie" type="text" placeholder="Enter Title" required>
     
@@ -27,7 +26,7 @@
         <input id="release" type="number" placeholder="YYYY" min="1920" max="2022" required>
 
         <label for="category"><b>Genre</b></label>
-        <input id="categories" list="options" placeholder="Choose a genre" required>
+        <input id="categories" list="options" placeholder="Chooses a genre" required>
         <datalist id="options">
             <option value="Comedy"></option>
             <option value="Romance"></option>
@@ -46,7 +45,6 @@
 
           <button id="send">Save Movie</button>
           <button id="close" onclick="document.getElementById('form').style.display='none'">Close</button>
-          <hr>
       </div>
 
       <main id="database">

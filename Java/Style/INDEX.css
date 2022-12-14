@@ -57,6 +57,8 @@ p {
 
 #form {
     display: none;
+    grid-template-columns: repeat(1, auto);
+    gap: 1rem;
 }
 
 #database {

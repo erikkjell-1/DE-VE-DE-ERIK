@@ -20,6 +20,7 @@ const db = getFirestore(app);
 const titleElem = document.querySelector('#movie');
 const yearElem = document.querySelector('#release');
 const ratingElem = document.querySelector('#score');
+const streamElem = document.querySelector('#streaming');
 const categoryElem = document.querySelector('#categories');
 const sendBtn = document.querySelector('#send');
 const elemResult = document.querySelector('#database');
@@ -29,16 +30,18 @@ sendBtn.addEventListener('click', () => {
     const year = yearElem.value;
     const rating = ratingElem.value;
     const genre = categoryElem.value;
+    const stream = streamElem.value;
 
-    saveToFirebase(title, year, genre, rating);
+    saveToFirebase(title, year, genre,stream, rating);
 });
 
-async function saveToFirebase(title, year, genre, rating) {
+async function saveToFirebase(title, year, genre, stream, rating) {
     try {
         await addDoc(collection(db, 'Movies'), { 
             Title: title,
             Released: year,
             Genre: genre,
+            Service: stream,
             Rating: rating,
             
         });
@@ -56,6 +59,7 @@ async function getAllMovies(){
                                ${movie.data().Title}<br>
                                Released: ${movie.data().Released}<br>
                                Genre: ${movie.data().Genre}<br>
+                               Service: ${movie.data().Service}<br>
                                Rating: ${movie.data().Rating}</p>
                                </card>`
         elemResult.insertAdjacentHTML('beforeend', elem)
@@ -85,12 +89,3 @@ function removeFunction() {
         });
     })
 }
-
-
-
-
-
-    
-
-
-

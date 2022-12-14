@@ -14,7 +14,7 @@
     <nav>
         <button onclick="document.getElementById('form').style.display='block'" style="width:auto;" id="movieForm">Add a Christmas Movie</button>
         
-        <input id="search" type="text" placeholder="Christmas Movie">
+        <input id="search" type="text" placeholder="Movie Search">
     </nav>
 
     <div id="form">
@@ -36,6 +36,9 @@
             <option value="Kids"></option>
 
         </datalist>
+
+        <label for="service"><b>Watch on</b></label>
+        <input id="streaming" type="text" placeholder="Streaming Service" required>
     
         <label for="rating"><b>Rating</b></label>
         <input id="score" type="number" placeholder="1-10" pattern="[1-5]{1}" max="10" min="1" required>

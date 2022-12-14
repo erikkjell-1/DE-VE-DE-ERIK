@@ -5,34 +5,48 @@
     background-color: brown;
 }
 
+h1 {
+    font-size: 4rem;
+}
+
 body{
     display: grid;
     justify-content: center;
     align-items: center;
+    padding: 2px;
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 p {
-    font-size: medium;
+    font-size: larger;
+    border: 2px black;
 }
 
-#search, #movie, #release, #categories, #score {
+#search, #movie, #release, #categories, #score, #streaming {
     padding: 1rem;
     border-radius: 1rem;
     background-color: antiquewhite;
     color: rgb(145, 20, 8);
+    font-size: large;
 }
 
 #send, #close, #movieForm {
     background-color: green;
     padding: 1rem;
     border-radius: 1rem;
+    font-size: large;
 }
 
 #send:hover, #close:hover, #movieForm:hover {
@@ -44,3 +58,11 @@ p {
 #form {
     display: none;
 }
+
+#database {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+    border:black;
+}
+

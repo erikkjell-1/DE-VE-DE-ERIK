@@ -65,9 +65,16 @@ p {
 
 #database {
     display: grid;
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(3, auto);
     justify-items: center;
     align-content: center;
     gap: 1rem;
     border:black;
+}
+
+@media screen and (max-width: 600px) {
+    #database {
+        grid-template-columns: repeat(1, auto);
+    }
+    
 }

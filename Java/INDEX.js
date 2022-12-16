@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC-A3v7MnV44iFiGVMDoOz9sVz6uXCP3qk",
@@ -11,7 +11,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);const titleElem = document.querySelector('#movie');
+const db = getFirestore(app);
+
+const titleElem = document.querySelector('#movie');
 const yearElem = document.querySelector('#release');
 const ratingElem = document.querySelector('#score');
 const streamElem = document.querySelector('#streaming');

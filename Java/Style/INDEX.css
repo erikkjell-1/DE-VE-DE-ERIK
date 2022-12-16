@@ -72,9 +72,8 @@ p {
     border:black;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
     #database {
         grid-template-columns: repeat(1, auto);
     }
-    
 }

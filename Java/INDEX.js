@@ -1,9 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC-A3v7MnV44iFiGVMDoOz9sVz6uXCP3qk",
   authDomain: "christmas-muvies.firebaseapp.com",
@@ -13,11 +10,8 @@ const firebaseConfig = {
   appId: "1:324195823082:web:9d090f0d3df8e3a3425693"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-const titleElem = document.querySelector('#movie');
+const db = getFirestore(app);const titleElem = document.querySelector('#movie');
 const yearElem = document.querySelector('#release');
 const ratingElem = document.querySelector('#score');
 const streamElem = document.querySelector('#streaming');
@@ -32,7 +26,7 @@ sendBtn.addEventListener('click', () => {
     const genre = categoryElem.value;
     const stream = streamElem.value;
 
-    saveToFirebase(title, year, genre,stream, rating);
+    saveToFirebase(title, year, genre, stream, rating);
 });
 
 async function saveToFirebase(title, year, genre, stream, rating) {
@@ -55,13 +49,13 @@ async function getAllMovies(){
 
     movies.forEach((movie) => {
         console.log(movie)
-        const elem = `         <card data-movie-id="${movie.id}"><p>
+        const elem = `         <article data-movie-id="${movie.id}"><p>
                                ${movie.data().Title}<br>
                                Released: ${movie.data().Released}<br>
                                Genre: ${movie.data().Genre}<br>
                                Service: ${movie.data().Service}<br>
                                Rating: ${movie.data().Rating}</p>
-                               </card>`
+                               </article>`
         elemResult.insertAdjacentHTML('beforeend', elem)
     })
     removeFunction();
@@ -78,13 +72,11 @@ async function removeMovie(movieId) {
 }
 
 function removeFunction() {
-    const movieElems = document.querySelectorAll('card');
+    const movieElems = document.querySelectorAll('article');
 
     movieElems.forEach((movieElem) => {
         movieElem.addEventListener('click', (event) => {
             const movieId = event.currentTarget.getAttribute('data-movie-id');
-
-           
             removeMovie(movieId);
         });
     })

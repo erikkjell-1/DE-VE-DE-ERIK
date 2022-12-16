@@ -11,10 +11,9 @@
     <header>
         <h1>CHRISTMAS MOVIES</h1>
     </header>
+    
     <nav>
         <button onclick="document.getElementById('form').style.display='grid'" style="width:auto;" id="movieForm">Add a Christmas Movie</button>
-        
-        <input id="search" type="text" placeholder="Movie Search">
     </nav>
 
     <div id="form">
@@ -27,13 +26,13 @@
 
         <label for="category"><b>Genre</b></label>
         <input id="categories" list="options" placeholder="Chooses a genre" required>
+
         <datalist id="options">
             <option value="Comedy"></option>
             <option value="Romance"></option>
             <option value="Action"></option>
             <option value="Drama"></option>
             <option value="Kids"></option>
-
         </datalist>
 
         <label for="service"><b>Watch on</b></label>
@@ -42,7 +41,6 @@
         <label for="rating"><b>Rating</b></label>
         <input id="score" type="number" placeholder="1-10" pattern="[1-5]{1}" max="10" min="1" required>
 
-
           <button id="send">Save Movie</button>
           <button id="close" onclick="document.getElementById('form').style.display='none'">Close</button>
       </div>
@@ -50,8 +48,6 @@
       <main id="database">
 
       </main>
-
-      
 
     <script type="module" src="INDEX.js"></script>
 </body>

@@ -23,14 +23,15 @@ header {
 }
 
 nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto);
     justify-content: center;
     align-items: center;
     gap: 1rem;
 }
 
 p {
-    font-size: medium;
+    font-size: large;
     border: 2px black;
 }
 
@@ -40,16 +41,17 @@ p {
     background-color: antiquewhite;
     color: rgb(145, 20, 8);
     font-size: large;
+    text-align: center;
 }
 
-#send, #close, #movieForm {
+#send, #close, #movieForm, #sendSearch {
     background-color: green;
     padding: 1rem;
     border-radius: 1rem;
     font-size: large;
 }
 
-#send:hover, #close:hover, #movieForm:hover {
+#send:hover, #close:hover, #movieForm:hover, #sendSearch:hover {
     cursor: pointer;
     background-color: antiquewhite;
     color: rgb(145, 20, 8);
@@ -63,8 +65,9 @@ p {
 
 #database {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(1, auto);
+    justify-items: center;
+    align-content: center;
     gap: 1rem;
     border:black;
 }
-
